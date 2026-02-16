@@ -75,7 +75,7 @@
 
         .logo span { color: var(--primary); }
 
-        .nav-links { display: flex; list-style: none; gap: 40px; align-items: center; }
+        .nav-links { display: flex; list-style: none; gap: 30px; align-items: center; } /* Reduced gap slightly */
         .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.9rem; transition: var(--transition); opacity: 0.7; }
         .nav-links a:hover { opacity: 1; color: var(--primary); }
 
@@ -86,6 +86,24 @@
             border-radius: 50px;
             font-size: 0.85rem;
             opacity: 1 !important;
+        }
+
+        /* Estilo para el botón de idioma */
+        .btn-lang {
+            background: transparent;
+            border: 1px solid var(--dark);
+            color: var(--dark);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-left: 10px;
+        }
+        .btn-lang:hover {
+            background: var(--dark);
+            color: white;
         }
 
         /* --- Hero Section (Apple Style) --- */
@@ -251,10 +269,13 @@
         <nav class="container">
             <a href="#hero" class="logo">agitly<span>.</span>com</a>
             <ul class="nav-links">
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#metodo">Metodología</a></li>
-                <li><a href="#portafolio">Portafolio</a></li>
-                <li><a href="#contacto" class="btn-header">Contactar</a></li>
+                <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+                <li><a href="#metodo" data-i18n="nav_method">Metodología</a></li>
+                <li><a href="#portafolio" data-i18n="nav_portfolio">Portafolio</a></li>
+                <li style="display: flex; align-items: center;">
+                    <a href="#contacto" class="btn-header" data-i18n="nav_contact">Contactar</a>
+                    <button id="lang-toggle" class="btn-lang">EN</button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -263,10 +284,10 @@
         <!-- Hero Section -->
         <section id="hero" class="hero">
             <div class="container hero-content">
-                <h1 class="reveal">Agilidad Real.<br><span class="text-gradient">IA que Escala.</span></h1>
-                <p class="reveal">Transformamos startups y empresas consolidadas mediante innovación de procesos y estrategias de marketing impulsadas por datos.</p>
+                <h1 class="reveal" data-i18n="hero_title_html">Agilidad Real.<br><span class="text-gradient">IA que Escala.</span></h1>
+                <p class="reveal" data-i18n="hero_desc">Transformamos startups y empresas consolidadas mediante innovación de procesos y estrategias de marketing impulsadas por datos.</p>
                 <div class="reveal">
-                    <a href="#contacto" class="btn-contact btn-email" style="display: inline-flex; width: auto;">Impulsar mi marca</a>
+                    <a href="#contacto" class="btn-contact btn-email" style="display: inline-flex; width: auto;" data-i18n="hero_cta">Impulsar mi marca</a>
                 </div>
             </div>
         </section>
@@ -275,25 +296,25 @@
         <section id="metodo" class="method">
             <div class="container">
                 <div style="max-width: 600px;" class="reveal">
-                    <h2 style="font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 20px;">Nuestro <span class="text-primary">Método</span> Ágil</h2>
-                    <p style="color: #86868b;">Un camino estructurado para resultados exponenciales en la era de la inteligencia artificial.</p>
+                    <h2 style="font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 20px;" data-i18n="method_title_html">Nuestro <span class="text-primary">Método</span> Ágil</h2>
+                    <p style="color: #86868b;" data-i18n="method_subtitle">Un camino estructurado para resultados exponenciales en la era de la inteligencia artificial.</p>
                 </div>
                 
                 <div class="method-steps">
                     <div class="step reveal">
                         <span class="step-num">01</span>
-                        <h3>Discovery</h3>
-                        <p>Analizamos tus cuellos de botella operativos y auditamos tu stack tecnológico actual para encontrar oportunidades de ahorro e innovación.</p>
+                        <h3 data-i18n="step1_title">Discovery</h3>
+                        <p data-i18n="step1_desc">Analizamos tus cuellos de botella operativos y auditamos tu stack tecnológico actual para encontrar oportunidades de ahorro e innovación.</p>
                     </div>
                     <div class="step reveal" style="transition-delay: 0.1s;">
                         <span class="step-num">02</span>
-                        <h3>Estrategia IA</h3>
-                        <p>Diseñamos un roadmap de implementación de IA y marketing digital enfocado en la captura de leads y conversión real.</p>
+                        <h3 data-i18n="step2_title">Estrategia IA</h3>
+                        <p data-i18n="step2_desc">Diseñamos un roadmap de implementación de IA y marketing digital enfocado en la captura de leads y conversión real.</p>
                     </div>
                     <div class="step reveal" style="transition-delay: 0.2s;">
                         <span class="step-num">03</span>
-                        <h3>Execution</h3>
-                        <p>Desplegamos las soluciones de forma iterativa. Ajustamos, optimizamos y escalamos lo que funciona en tiempo real.</p>
+                        <h3 data-i18n="step3_title">Execution</h3>
+                        <p data-i18n="step3_desc">Desplegamos las soluciones de forma iterativa. Ajustamos, optimizamos y escalamos lo que funciona en tiempo real.</p>
                     </div>
                 </div>
             </div>
@@ -303,35 +324,35 @@
         <section id="portafolio" class="portfolio">
             <div class="container">
                 <div class="reveal">
-                    <h2 style="font-size: 2.5rem; letter-spacing: -1px;">Proyectos que <span style="color: var(--primary);">Impactan</span></h2>
+                    <h2 style="font-size: 2.5rem; letter-spacing: -1px;" data-i18n="portfolio_title_html">Proyectos que <span style="color: var(--primary);">Impactan</span></h2>
                 </div>
                 
                 <div class="bento-grid">
                     <div class="bento-item item-large reveal">
                         <div style="position: relative; z-index: 2;">
-                            <span style="text-transform: uppercase; font-size: 0.7rem; font-weight: 700; color: var(--secondary);">Caso de Éxito IA</span>
-                            <h4>Automatización de Retail Global</h4>
-                            <p>Reducción del 40% en tiempos de respuesta al cliente mediante agentes de IA personalizados.</p>
+                            <span style="text-transform: uppercase; font-size: 0.7rem; font-weight: 700; color: var(--secondary);" data-i18n="case_study_label">Caso de Éxito IA</span>
+                            <h4 data-i18n="proj1_title">Automatización de Retail Global</h4>
+                            <p data-i18n="proj1_desc">Reducción del 40% en tiempos de respuesta al cliente mediante agentes de IA personalizados.</p>
                         </div>
                         
                     </div>
                     
                     <div class="bento-item reveal" style="transition-delay: 0.1s;">
-                        <h4>Growth Marketing</h4>
-                        <p>+200% leads para SaaS Fintech.</p>
+                        <h4 data-i18n="proj2_title">Growth Marketing</h4>
+                        <p data-i18n="proj2_desc">+200% leads para SaaS Fintech.</p>
                         
                     </div>
                     
                     <div class="bento-item reveal" style="transition-delay: 0.2s;">
-                        <h4>Brand Identity</h4>
-                        <p>Rediseño ágil para Startup Unicornio.</p>
+                        <h4 data-i18n="proj3_title">Brand Identity</h4>
+                        <p data-i18n="proj3_desc">Rediseño ágil para Startup Unicornio.</p>
                         
                     </div>
                     
                     <div class="bento-item item-mid reveal" style="transition-delay: 0.3s;">
-                        <span style="color: var(--primary); font-weight: 600;">E-commerce Expansion</span>
-                        <h4>Escalamiento de Ventas</h4>
-                        <p>Estrategia de penetración de mercado y pauta digital inteligente.</p>
+                        <span style="color: var(--primary); font-weight: 600;" data-i18n="proj4_label">E-commerce Expansion</span>
+                        <h4 data-i18n="proj4_title">Escalamiento en Latam</h4>
+                        <p data-i18n="proj4_desc">Estrategia de penetración de mercado y pauta digital inteligente.</p>
                         
                     </div>
                 </div>
@@ -344,18 +365,18 @@
                 <div class="services-grid">
                     <div class="service-card reveal">
                         <i class="fas fa-brain"></i>
-                        <h3>Consultoría IA</h3>
-                        <p>Asesoría en modelos de lenguaje y automatización para hacer tu empresa 10 veces más productiva.</p>
+                        <h3 data-i18n="serv1_title">Consultoría IA</h3>
+                        <p data-i18n="serv1_desc">Asesoría en modelos de lenguaje y automatización para hacer tu empresa 10 veces más productiva.</p>
                     </div>
                     <div class="service-card reveal">
                         <i class="fas fa-bullseye"></i>
-                        <h3>Lead Generation</h3>
-                        <p>Captura de prospectos calificados mediante embudos dinámicos y pauta digital de alto alcance.</p>
+                        <h3 data-i18n="serv2_title">Lead Generation</h3>
+                        <p data-i18n="serv2_desc">Captura de prospectos calificados mediante embudos dinámicos y pauta digital de alto alcance.</p>
                     </div>
                     <div class="service-card reveal">
                         <i class="fas fa-bolt"></i>
-                        <h3>Procesos Ágiles</h3>
-                        <p>Optimización de flujos de trabajo internos para eliminar la burocracia técnica y operativa.</p>
+                        <h3 data-i18n="serv3_title">Procesos Ágiles</h3>
+                        <p data-i18n="serv3_desc">Optimización de flujos de trabajo internos para eliminar la burocracia técnica y operativa.</p>
                     </div>
                 </div>
             </div>
@@ -364,14 +385,14 @@
         <!-- Sección de Contacto Directo -->
         <section id="contacto" class="container">
             <div class="contact-cta reveal">
-                <h2 class="reveal">Llevemos tu marca al <span style="color: var(--secondary);">futuro</span>.</h2>
-                <p style="margin-bottom: 3rem; opacity: 0.8; font-size: 1.2rem;">Sin formularios tediosos. Hablemos directamente.</p>
+                <h2 class="reveal" data-i18n="contact_title_html">Llevemos tu marca al <span style="color: var(--secondary);">futuro</span>.</h2>
+                <p style="margin-bottom: 3rem; opacity: 0.8; font-size: 1.2rem;" data-i18n="contact_subtitle">Sin formularios tediosos. Hablemos directamente.</p>
                 <div class="contact-btns">
                     <a href="https://wa.me/525536597837?text=I'm%20interested%20in%20..." target="_blank" class="btn-contact btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> WhatsApp Business
+                        <i class="fab fa-whatsapp"></i> <span data-i18n="btn_whatsapp">WhatsApp Business</span>
                     </a>
                     <a href="mailto:info@agitly.com" class="btn-contact btn-email">
-                        <i class="fas fa-envelope"></i> Enviar Email
+                        <i class="fas fa-envelope"></i> <span data-i18n="btn_email">Enviar Email</span>
                     </a>
                 </div>
             </div>
@@ -386,8 +407,7 @@
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
-            <p style="font-size: 0.8rem; color: #86868b;">&copy; 2026 Agitly Consulting. Todos los derechos reservados.</p>
-            <p style="font-size: 0.8rem; color: #86868b;">Desarrollado en Delware, USA.</p>
+            <p style="font-size: 0.8rem; color: #86868b;">&copy; 2026 Agitly Consulting. <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
         </div>
     </footer>
 
@@ -406,9 +426,119 @@
         }
 
         window.addEventListener("scroll", reveal);
-
-        // Ejecutar una vez al cargar para elementos en el hero
         window.onload = reveal;
+
+        // --- Lógica de Idioma (Diccionario Dinámico) ---
+        const translations = {
+            es: {
+                nav_services: "Servicios",
+                nav_method: "Metodología",
+                nav_portfolio: "Portafolio",
+                nav_contact: "Contactar",
+                hero_title_html: "Agilidad Real.<br><span class=\"text-gradient\">IA que Escala.</span>",
+                hero_desc: "Transformamos startups y empresas consolidadas mediante innovación de procesos y estrategias de marketing impulsadas por datos.",
+                hero_cta: "Impulsar mi marca",
+                method_title_html: "Nuestro <span class=\"text-primary\">Método</span> Ágil",
+                method_subtitle: "Un camino estructurado para resultados exponenciales en la era de la inteligencia artificial.",
+                step1_title: "Discovery",
+                step1_desc: "Analizamos tus cuellos de botella operativos y auditamos tu stack tecnológico actual para encontrar oportunidades de ahorro e innovación.",
+                step2_title: "Estrategia IA",
+                step2_desc: "Diseñamos un roadmap de implementación de IA y marketing digital enfocado en la captura de leads y conversión real.",
+                step3_title: "Execution",
+                step3_desc: "Desplegamos las soluciones de forma iterativa. Ajustamos, optimizamos y escalamos lo que funciona en tiempo real.",
+                portfolio_title_html: "Proyectos que <span style=\"color: var(--primary);\">Impactan</span>",
+                case_study_label: "Caso de Éxito IA",
+                proj1_title: "Automatización de Retail Global",
+                proj1_desc: "Reducción del 40% en tiempos de respuesta al cliente mediante agentes de IA personalizados.",
+                proj2_title: "Growth Marketing",
+                proj2_desc: "+200% leads para SaaS Fintech.",
+                proj3_title: "Brand Identity",
+                proj3_desc: "Rediseño ágil para Startup Unicornio.",
+                proj4_label: "E-commerce Expansion",
+                proj4_title: "Escalamiento en Latam",
+                proj4_desc: "Estrategia de penetración de mercado y pauta digital inteligente.",
+                serv1_title: "Consultoría IA",
+                serv1_desc: "Asesoría en modelos de lenguaje y automatización para hacer tu empresa 10 veces más productiva.",
+                serv2_title: "Lead Generation",
+                serv2_desc: "Captura de prospectos calificados mediante embudos dinámicos y pauta digital de alto alcance.",
+                serv3_title: "Procesos Ágiles",
+                serv3_desc: "Optimización de flujos de trabajo internos para eliminar la burocracia técnica y operativa.",
+                contact_title_html: "Llevemos tu marca al <span style=\"color: var(--secondary);\">futuro</span>.",
+                contact_subtitle: "Sin formularios tediosos. Hablemos directamente.",
+                btn_whatsapp: "WhatsApp Business",
+                btn_email: "Enviar Email",
+                footer_rights: "Todos los derechos reservados."
+            },
+            en: {
+                nav_services: "Services",
+                nav_method: "Methodology",
+                nav_portfolio: "Portfolio",
+                nav_contact: "Contact",
+                hero_title_html: "Real Agility.<br><span class=\"text-gradient\">Scaling AI.</span>",
+                hero_desc: "We transform startups and established companies through process innovation and data-driven marketing strategies.",
+                hero_cta: "Boost my brand",
+                method_title_html: "Our Agile <span class=\"text-primary\">Method</span>",
+                method_subtitle: "A structured path for exponential results in the era of artificial intelligence.",
+                step1_title: "Discovery",
+                step1_desc: "We analyze your operational bottlenecks and audit your current tech stack to find opportunities for savings and innovation.",
+                step2_title: "AI Strategy",
+                step2_desc: "We design an AI implementation and digital marketing roadmap focused on lead capture and real conversion.",
+                step3_title: "Execution",
+                step3_desc: "We deploy solutions iteratively. We adjust, optimize, and scale what works in real-time.",
+                portfolio_title_html: "Projects that <span style=\"color: var(--primary);\">Impact</span>",
+                case_study_label: "AI Case Study",
+                proj1_title: "Global Retail Automation",
+                proj1_desc: "40% reduction in customer response times via personalized AI agents.",
+                proj2_title: "Growth Marketing",
+                proj2_desc: "+200% leads for Fintech SaaS.",
+                proj3_title: "Brand Identity",
+                proj3_desc: "Agile redesign for Unicorn Startup.",
+                proj4_label: "E-commerce Expansion",
+                proj4_title: "LatAm Scaling",
+                proj4_desc: "Market penetration strategy and intelligent digital ads.",
+                serv1_title: "AI Consulting",
+                serv1_desc: "Advisory on language models and automation to make your company 10x more productive.",
+                serv2_title: "Lead Generation",
+                serv2_desc: "Capture qualified prospects through dynamic funnels and high-reach digital advertising.",
+                serv3_title: "Agile Processes",
+                serv3_desc: "Optimization of internal workflows to eliminate technical and operational bureaucracy.",
+                contact_title_html: "Let's take your brand to the <span style=\"color: var(--secondary);\">future</span>.",
+                contact_subtitle: "No tedious forms. Let's talk directly.",
+                btn_whatsapp: "WhatsApp Business",
+                btn_email: "Send Email",
+                footer_rights: "All rights reserved."
+            }
+        };
+
+        let currentLang = 'es';
+        const langToggleBtn = document.getElementById('lang-toggle');
+
+        langToggleBtn.addEventListener('click', () => {
+            // Alternar idioma
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            
+            // Actualizar texto del botón
+            langToggleBtn.textContent = currentLang === 'es' ? 'EN' : 'ES';
+
+            // Actualizar contenido
+            updateContent();
+        });
+
+        function updateContent() {
+            const elements = document.querySelectorAll('[data-i18n]');
+            
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    // Si la clave termina en _html, usamos innerHTML para preservar estilos
+                    if (key.endsWith('_html')) {
+                        el.innerHTML = translations[currentLang][key];
+                    } else {
+                        el.innerText = translations[currentLang][key];
+                    }
+                }
+            });
+        }
     </script>
 </body>
 </html>
