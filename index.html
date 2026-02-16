@@ -3,30 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agitly.com - Consultoría en Transformación Digital e IA</title>
+    <title>Agitly.com | Consultoría en IA & Crecimiento Digital</title>
     
-    <!-- Google Fonts (Poppins) -->
+    <!-- Fuentes y Estilos Externos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome (para iconos) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- INICIO DE CSS -->
     <style>
-        /* ==== Configuración Global y Variables ==== */
         :root {
-            --color-primary: #0052cc; /* Un azul corporativo moderno */
-            --color-secondary: #FFD700; /* Amarillo para títulos (oro) */
-            --color-dark: #1a1a1a;      /* Negro/Gris oscuro para texto y fondos */
-            --color-light: #FFFFFF;     /* Blanco */
-            --color-bg-light: #f9f9f9;  /* Un gris muy claro para secciones */
-            
-            --font-family: 'Poppins', sans-serif;
-            --transition: all 0.3s ease-in-out;
-            --container-width: 1100px;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            --primary: #0052cc;
+            --secondary: #FFD700;
+            --dark: #0a0a0a;
+            --light: #ffffff;
+            --gray-100: #f5f5f7; /* Color estilo Apple */
+            --gray-200: #e5e5e7;
+            --font-main: 'Poppins', sans-serif;
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -40,756 +34,381 @@
         }
 
         body {
-            font-family: var(--font-family);
-            line-height: 1.6;
-            color: var(--color-dark);
-            background-color: var(--color-light);
-            overflow-x: hidden; /* Previene scroll horizontal */
+            font-family: var(--font-main);
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.5;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: var(--container-width);
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        ul {
-            list-style: none;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .section-padding {
-            padding: 6rem 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .text-primary {
-            color: var(--color-primary);
-        }
-
-        /* Usamos el amarillo para los títulos como pediste */
-        .text-secondary {
-            color: var(--color-secondary);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1); 
-        }
-
-        .bg-light {
-            background-color: var(--color-bg-light);
-        }
-
-        .bg-dark {
-            background-color: var(--color-dark);
-            color: var(--color-light);
-        }
-
-        /* ==== Botones ==== */
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border: none;
-            border-radius: 50px; /* Bordes redondeados = moderno/amigable */
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .btn-primary {
-            background-color: var(--color-primary);
-            color: var(--color-light);
-        }
-
-        .btn-primary:hover {
-            background-color: #003d99; /* Azul más oscuro */
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 82, 204, 0.3);
-        }
-
-        .btn-large {
-            padding: 15px 35px;
-            font-size: 1.1rem;
-        }
-
-        /* ==== Header y Navegación ==== */
-        .main-header {
-            background-color: var(--color-light);
-            border-bottom: 1px solid #eee;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
+        /* --- Header Moderno --- */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 1.2rem 0;
+            position: fixed;
             width: 100%;
+            top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        .main-header nav {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: var(--color-dark);
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
-        .logo-dot {
-            color: var(--color-primary);
+        .logo span { color: var(--primary); }
+
+        .nav-links { display: flex; list-style: none; gap: 40px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.9rem; transition: var(--transition); opacity: 0.7; }
+        .nav-links a:hover { opacity: 1; color: var(--primary); }
+
+        .btn-header {
+            background: var(--dark);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            opacity: 1 !important;
         }
 
-        .nav-links {
+        /* --- Hero Section (Apple Style) --- */
+        .hero {
+            height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+            background: #fff;
         }
 
-        .nav-links li {
-            margin-left: 2rem;
+        .hero-content {
+            max-width: 900px;
         }
 
-        .nav-links a {
-            font-weight: 600;
+        .hero h1 { 
+            font-size: clamp(2.5rem, 8vw, 5rem); 
+            font-weight: 700;
+            line-height: 1.05; 
+            margin-bottom: 1.5rem; 
+            letter-spacing: -2px;
+        }
+
+        .hero p { 
+            font-size: clamp(1.1rem, 2vw, 1.5rem); 
+            color: #86868b; 
+            max-width: 650px; 
+            margin: 0 auto 2.5rem; 
+            font-weight: 400;
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, var(--primary), #00a2ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- Portafolio Bento Grid --- */
+        .portfolio { padding: 100px 0; background: var(--gray-100); }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 300px);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .bento-item {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            position: relative;
+            padding: 30px;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .bento-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .bento-item h4 { font-size: 1.2rem; margin-bottom: 5px; z-index: 2; }
+        .bento-item p { font-size: 0.9rem; color: #86868b; z-index: 2; }
+        
+        .bento-img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.1;
             transition: var(--transition);
         }
+        .bento-item:hover .bento-img { opacity: 0.2; }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--color-primary);
-        }
+        /* Variaciones de tamaño del Grid */
+        .item-large { grid-column: span 2; grid-row: span 2; background: var(--dark); color: white; }
+        .item-mid { grid-column: span 2; }
 
-        .nav-links .btn {
-            margin-left: 2rem;
-        }
-
-        .menu-toggle {
-            display: none; /* Oculto en escritorio */
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--color-dark);
-        }
-
-        /* ==== Sección Hero ==== */
-        .hero-section {
-            min-height: 90vh;
+        /* --- Nueva Sección: Nuestro Método (Roadmap) --- */
+        .method { padding: 100px 0; background: white; }
+        .method-steps {
             display: flex;
-            align-items: center;
-            text-align: center;
-            background-color: var(--color-light);
+            justify-content: space-between;
+            margin-top: 60px;
+            gap: 20px;
         }
+        .step { flex: 1; text-align: left; }
+        .step-num { font-size: 3rem; font-weight: 700; color: var(--gray-200); margin-bottom: 10px; display: block; }
+        .step h3 { font-size: 1.3rem; margin-bottom: 15px; }
+        .step p { color: #86868b; font-size: 0.95rem; }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            color: #555;
-        }
-
-        /* ==== Sección Servicios ==== */
+        /* --- Servicios (Estilo Suki/Moderno) --- */
+        .services { padding: 100px 0; }
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 40px;
         }
+        .service-card { padding: 20px; transition: var(--transition); }
+        .service-card i { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .service-card p { color: #86868b; }
 
-        .service-card {
-            background: var(--color-light);
-            border: 1px solid #eee;
-            border-radius: 12px;
-            padding: 2.5rem;
+        /* --- Contacto Estático (WhatsApp & Email) --- */
+        .contact-cta {
+            padding: 120px 0;
+            background: var(--dark);
+            color: white;
             text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+            border-radius: 40px;
+            margin: 40px 24px;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--color-primary);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: var(--color-primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* ==== Sección Portafolio ==== */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .portfolio-item {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            position: relative;
-            cursor: pointer;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .portfolio-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            padding: 2rem 1.5rem 1.5rem;
-            color: var(--color-light);
-            transform: translateY(30%);
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .portfolio-item:hover .portfolio-info {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-info h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.25rem;
-        }
-
-        /* ==== Sección Clientes (Logo Cloud) ==== */
-        .logo-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .logo-cloud img {
-            max-height: 50px;
-            width: auto;
-            filter: grayscale(100%);
-            opacity: 0.6;
-            transition: var(--transition);
-        }
-
-        .logo-cloud img:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-
-        /* ==== Sección Contacto ==== */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .contact-info .section-title {
-            text-align: left;
-        }
-
-        .contact-info p {
-            font-size: 1.1rem;
-            opacity: 0.8;
-        }
-
-        .contact-form .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 0.5rem;
+        .contact-cta h2 { font-size: 3rem; margin-bottom: 2rem; letter-spacing: -1.5px; }
+        .contact-btns { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        
+        .btn-contact {
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
             font-weight: 600;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #555;
-            border-radius: 8px;
-            background-color: #2a2a2a;
-            color: var(--color-light);
-            font-family: var(--font-family);
-            font-size: 1rem;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--color-primary);
-        }
-
-        /* Mensajes de estado del formulario */
-        #form-status {
-            margin-top: 1rem;
-            font-weight: 600;
-        }
-        #form-status.success {
-            color: #28a745; /* Verde */
-        }
-        #form-status.error {
-            color: #dc3545; /* Rojo */
-        }
-
-        /* ==== Footer ==== */
-        .main-footer {
-            background-color: var(--color-dark);
-            color: #aaa;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-light);
-        }
-
-        .footer-social a {
-            color: #aaa;
-            font-size: 1.5rem;
-            margin-left: 1.5rem;
+            gap: 12px;
             transition: var(--transition);
         }
 
-        .footer-social a:hover {
-            color: var(--color-primary);
-        }
+        .btn-whatsapp { background: #25D366; color: white; }
+        .btn-email { background: var(--primary); color: white; }
+        .btn-contact:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        /* ==== Efectos de Animación (JavaScript) ==== */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
+        /* --- Footer --- */
+        footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--gray-200); }
+        .footer-logo { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; display: block; }
+        .social-links { margin-bottom: 30px; display: flex; justify-content: center; gap: 20px; }
+        .social-links a { color: var(--dark); font-size: 1.2rem; opacity: 0.5; transition: 0.3s; }
+        .social-links a:hover { opacity: 1; }
 
-        .fade-in.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-
-        /* ==== Diseño Responsivo ==== */
-
-        /* Tablets (md) */
+        /* --- Mobile Responsive --- */
         @media (max-width: 992px) {
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            .contact-info .section-title {
-                text-align: center;
-            }
-            .contact-info {
-                text-align: center;
-                margin-bottom: 2rem;
-            }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 3.5rem; }
+            .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+            .item-large, .item-mid { grid-column: span 1; grid-row: span 1; height: 300px; }
+            .method-steps { flex-direction: column; gap: 40px; }
         }
 
-        /* Móviles (sm) */
-        @media (max-width: 768px) {
-            .section-padding {
-                padding: 4rem 0;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
+        /* --- Animations --- */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            /* Navegación Móvil */
-            .menu-toggle {
-                display: block;
-                z-index: 1001;
-                /* Asegura que el icono esté alineado con el logo */
-                align-self: center; 
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                /* Corrección: Inicia desde la derecha */
-                right: 0;
-                width: 70%;
-                height: 100vh;
-                background-color: var(--color-dark);
-                color: var(--color-light);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transform: translateX(100%);
-                transition: transform 0.3s ease-out;
-                /* Asegura que esté sobre el contenido */
-                z-index: 1000; 
-            }
-
-            .nav-links.active {
-                transform: translateX(0);
-                box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-            }
-
-            .nav-links li {
-                margin: 1.5rem 0;
-                transform: translateX(20px);
-                opacity: 0;
-                transition: opacity 0.3s ease-out 0.2s, transform 0.3s ease-out 0.2s;
-            }
-            
-            /* Animación escalonada para los links del menú */
-            .nav-links.active li {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            .nav-links.active li:nth-child(1) { transition-delay: 0.2s; }
-            .nav-links.active li:nth-child(2) { transition-delay: 0.3s; }
-            .nav-links.active li:nth-child(3) { transition-delay: 0.4s; }
-            .nav-links.active li:nth-child(4) { transition-delay: 0.5s; }
-
-
-            .nav-links .btn {
-                margin: 1.5rem 0 0 0;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                gap: 2rem;
-            }
-        }
     </style>
-    <!-- FIN DE CSS -->
 </head>
 <body>
 
-    <!-- ==== Header (Navegación) ==== -->
-    <header class="main-header">
+    <header>
         <nav class="container">
-            <a href="#hero" class="logo">agitly<span class="logo-dot">.</span>com</a>
+            <a href="#hero" class="logo">agitly<span>.</span>com</a>
             <ul class="nav-links">
                 <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#metodo">Metodología</a></li>
                 <li><a href="#portafolio">Portafolio</a></li>
-                <li><a href="#clientes">Clientes</a></li>
-                <li><a href="#contacto" class="btn btn-primary">Hablemos</a></li>
+                <li><a href="#contacto" class="btn-header">Contactar</a></li>
             </ul>
-            <button class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
         </nav>
     </header>
 
     <main>
-
-        <!-- ==== Sección Hero ==== -->
-        <section id="hero" class="hero-section">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
             <div class="container hero-content">
-                <h1 class="fade-in">Transformación Digital <br>Impulsada por <span class="text-primary">Inteligencia Artificial</span></h1>
-                <p class="fade-in">En Agitly, convertimos tus procesos en ventajas competitivas. Consultoría ágil para la era digital.</p>
-                <a href="#contacto" class="btn btn-primary btn-large fade-in">Comienza tu Transformación</a>
+                <h1 class="reveal">Agilidad Real.<br><span class="text-gradient">IA que Escala.</span></h1>
+                <p class="reveal">Transformamos startups y empresas consolidadas mediante innovación de procesos y estrategias de marketing impulsadas por datos.</p>
+                <div class="reveal">
+                    <a href="#contacto" class="btn-contact btn-email" style="display: inline-flex; width: auto;">Impulsar mi marca</a>
+                </div>
             </div>
         </section>
 
-        <!-- ==== Sección Servicios ==== -->
-        <section id="servicios" class="container section-padding">
-            <!-- Título con el color amarillo solicitado -->
-            <h2 class="section-title fade-in">Nuestras <span class="text-secondary">Soluciones</span></h2>
-            <div class="services-grid">
-                
-                <div class="service-card fade-in" style="transition-delay: 0.1s;">
-                    <i class="fas fa-cogs service-icon"></i>
-                    <h3>Innovación de Procesos</h3>
-                    <p>Optimizamos tus flujos de trabajo, reducimos costos y aumentamos la eficiencia operativa mediante metodologías ágiles.</p>
-                </div>
-                
-                <div class="service-card fade-in" style="transition-delay: 0.2s;">
-                    <i class="fas fa-brain service-icon"></i>
-                    <h3>Asesoría en IA</h3>
-                    <p>Integramos soluciones de Inteligencia Artificial para automatizar tareas, analizar datos y descubrir nuevas oportunidades de negocio.</p>
-                </div>
-                
-                <div class="service-card fade-in" style="transition-delay: 0.3s;">
-                    <i class="fas fa-bullhorn service-icon"></i>
-                    <h3>Marketing Digital y Crecimiento</h3>
-                    <p>Expandimos tu marca y capturamos leads calificados. Estrategias de alcance, SEO, SEM y growth hacking.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ==== Sección Portafolio ==== -->
-        <section id="portafolio" class="section-padding bg-light">
+        <!-- Sección de Metodología (Roadmap) -->
+        <section id="metodo" class="method">
             <div class="container">
-                <h2 class="section-title fade-in">Proyectos <span class="text-secondary">Exitosos</span></h2>
-                <div class="portfolio-grid">
-                    
-                    <div class="portfolio-item fade-in">
-                        <!-- Reemplazo de placeholder por imagen real de placehold.co -->
-                        <img src="https://placehold.co/600x400/0052cc/ffffff?text=Proyecto+E-commerce" alt="Optimización de E-commerce">
-                        <div class="portfolio-info">
-                            <h4>Optimización de E-commerce</h4>
-                            <p>Implementación de IA para recomendaciones</p>
-                        </div>
+                <div style="max-width: 600px;" class="reveal">
+                    <h2 style="font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 20px;">Nuestro <span class="text-primary">Método</span> Ágil</h2>
+                    <p style="color: #86868b;">Un camino estructurado para resultados exponenciales en la era de la inteligencia artificial.</p>
+                </div>
+                
+                <div class="method-steps">
+                    <div class="step reveal">
+                        <span class="step-num">01</span>
+                        <h3>Discovery</h3>
+                        <p>Analizamos tus cuellos de botella operativos y auditamos tu stack tecnológico actual para encontrar oportunidades de ahorro e innovación.</p>
                     </div>
-                    
-                    <div class="portfolio-item fade-in" style="transition-delay: 0.1s;">
-                        <!-- Reemplazo de placeholder por imagen real de placehold.co -->
-                        <img src="https://placehold.co/600x400/222222/ffd700?text=Plataforma+Growth" alt="Plataforma de Growth">
-                        <div class="portfolio-info">
-                            <h4>Plataforma de Growth</h4>
-                            <p>Estrategia de marketing digital y captura de leads</p>
-                        </div>
+                    <div class="step reveal" style="transition-delay: 0.1s;">
+                        <span class="step-num">02</span>
+                        <h3>Estrategia IA</h3>
+                        <p>Diseñamos un roadmap de implementación de IA y marketing digital enfocado en la captura de leads y conversión real.</p>
                     </div>
-
-                    <div class="portfolio-item fade-in" style="transition-delay: 0.2s;">
-                        <!-- Reemplazo de placeholder por imagen real de placehold.co -->
-                        <img src="https://placehold.co/600x400/f0f0f0/333333?text=Automatización" alt="Automatización de Procesos">
-                        <div class="portfolio-info">
-                            <h4>Automatización de Procesos</h4>
-                            <p>Consultoría y rediseño de flujos de trabajo</p>
-                        </div>
+                    <div class="step reveal" style="transition-delay: 0.2s;">
+                        <span class="step-num">03</span>
+                        <h3>Execution</h3>
+                        <p>Desplegamos las soluciones de forma iterativa. Ajustamos, optimizamos y escalamos lo que funciona en tiempo real.</p>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- ==== Sección Clientes ==== -->
-        <section id="clientes" class="container section-padding">
-            <h2 class="section-title fade-in">Marcas que <span class="text-secondary">Confían</span> en Nosotros</h2>
-            <div class="logo-cloud fade-in">
-                <!-- Usamos placeholders para los logos -->
-                <img src="https://placehold.co/150x60/f0f0f0/aaa?text=Marca+1" alt="Logo Cliente 1">
-                <img src="https://placehold.co/150x60/f0f0f0/aaa?text=Marca+2" alt="Logo Cliente 2">
-                <img src="https://placehold.co/150x60/f0f0f0/aaa?text=Marca+3" alt="Logo Cliente 3">
-                <img src="https://placehold.co/150x60/f0f0f0/aaa?text=Marca+4" alt="Logo Cliente 4">
-                <img src="https://placehold.co/150x60/f0f0f0/aaa?text=Marca+5" alt="Logo Cliente 5">
-            </div>
-        </section>
-        
-        <!-- ==== Sección Contacto ==== -->
-        <section id="contacto" class="section-padding bg-dark">
-            <div class="container contact-container">
-                <div class="contact-info fade-in">
-                    <h2 class="section-title"><span class="text-secondary">Hablemos</span></h2>
-                    <p>¿Listo para llevar tu empresa al siguiente nivel? Completa el formulario y un especialista de Agitly te contactará.</p>
+        <!-- Sección Bento Portafolio (Estilo Startup) -->
+        <section id="portafolio" class="portfolio">
+            <div class="container">
+                <div class="reveal">
+                    <h2 style="font-size: 2.5rem; letter-spacing: -1px;">Proyectos que <span style="color: var(--primary);">Impactan</span></h2>
                 </div>
-                <!-- 
-                  ACTUALIZACIÓN: 
-                  Agregamos el 'action' con tu URL de Formspree y el 'method' POST.
-                  Reemplaza 'TU_ID_DE_FORMULARIO' con el ID que te da Formspree.
-                -->
-                <form id="contact-form" class="contact-form fade-in" novalidate action="https://formspree.io/f/TU_ID_DE_FORMULARIO" method="POST">
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required>
+                
+                <div class="bento-grid">
+                    <div class="bento-item item-large reveal">
+                        <div style="position: relative; z-index: 2;">
+                            <span style="text-transform: uppercase; font-size: 0.7rem; font-weight: 700; color: var(--secondary);">Caso de Éxito IA</span>
+                            <h4>Automatización de Retail Global</h4>
+                            <p>Reducción del 40% en tiempos de respuesta al cliente mediante agentes de IA personalizados.</p>
+                        </div>
+                        
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                    
+                    <div class="bento-item reveal" style="transition-delay: 0.1s;">
+                        <h4>Growth Marketing</h4>
+                        <p>+200% leads para SaaS Fintech.</p>
+                        
                     </div>
-                    <div class="form-group">
-                        <label for="message">¿Cómo podemos ayudarte?</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                    
+                    <div class="bento-item reveal" style="transition-delay: 0.2s;">
+                        <h4>Brand Identity</h4>
+                        <p>Rediseño ágil para Startup Unicornio.</p>
+                        
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                    <div id="form-status"></div>
-                </form>
+                    
+                    <div class="bento-item item-mid reveal" style="transition-delay: 0.3s;">
+                        <span style="color: var(--primary); font-weight: 600;">E-commerce Expansion</span>
+                        <h4>Escalamiento de Ventas</h4>
+                        <p>Estrategia de penetración de mercado y pauta digital inteligente.</p>
+                        
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- Servicios -->
+        <section id="servicios" class="services">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <i class="fas fa-brain"></i>
+                        <h3>Consultoría IA</h3>
+                        <p>Asesoría en modelos de lenguaje y automatización para hacer tu empresa 10 veces más productiva.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Lead Generation</h3>
+                        <p>Captura de prospectos calificados mediante embudos dinámicos y pauta digital de alto alcance.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Procesos Ágiles</h3>
+                        <p>Optimización de flujos de trabajo internos para eliminar la burocracia técnica y operativa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto Directo -->
+        <section id="contacto" class="container">
+            <div class="contact-cta reveal">
+                <h2 class="reveal">Llevemos tu marca al <span style="color: var(--secondary);">futuro</span>.</h2>
+                <p style="margin-bottom: 3rem; opacity: 0.8; font-size: 1.2rem;">Sin formularios tediosos. Hablemos directamente.</p>
+                <div class="contact-btns">
+                    <a href="https://wa.me/525536597837?text=I'm%20interested%20in%20..." target="_blank" class="btn-contact btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Business
+                    </a>
+                    <a href="mailto:info@agitly.com" class="btn-contact btn-email">
+                        <i class="fas fa-envelope"></i> Enviar Email
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- ==== Footer ==== -->
-    <footer class="main-footer">
+    <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">agitly<span class="logo-dot">.</span>com</div>
-                <div class="footer-social">
-                    <a href="https://linkedin.com/company/agitly-placeholder" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://twitter.com/agitly-placeholder" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://medium.com/@agitly-placeholder" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium"></i></a>
-                </div>
+            <span class="footer-logo">agitly<span>.</span>com</span>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
-            <p>&copy; 2025 Agitly.com. Todos los derechos reservados.</p>
+            <p style="font-size: 0.8rem; color: #86868b;">&copy; 2026 Agitly Consulting. Todos los derechos reservados.</p>
+            <p style="font-size: 0.8rem; color: #86868b;">Desarrollado en Delware, USA.</p>
         </div>
     </footer>
 
-    <!-- INICIO DE JAVASCRIPT -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // ==== 1. Navegación Móvil (Hamburguesa) ====
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-
-            if (menuToggle) {
-                menuToggle.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                    
-                    // Cambia el icono de hamburguesa a "X"
-                    const icon = menuToggle.querySelector('i');
-                    if (icon.classList.contains('fa-bars')) {
-                        icon.classList.remove('fa-bars');
-                        icon.classList.add('fa-times');
-                    } else {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                });
-
-                // Cierra el menú si se hace clic en un enlace
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        if (navLinks.classList.contains('active')) {
-                            navLinks.classList.remove('active');
-                            menuToggle.querySelector('i').classList.remove('fa-times');
-                            menuToggle.querySelector('i').classList.add('fa-bars');
-                        }
-                    });
-                });
+        // --- Animación de Revelado al hacer Scroll ---
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
             }
+        }
 
-            // ==== 2. Animación "Fade-in" al hacer Scroll (Look 2025) ====
-            // Esto hace que los elementos aparezcan suavemente cuando entran en la pantalla
-            const fadeElements = document.querySelectorAll('.fade-in');
+        window.addEventListener("scroll", reveal);
 
-            const observerOptions = {
-                root: null, // usa el viewport
-                rootMargin: '0px',
-                threshold: 0.1 // 10% del elemento debe ser visible
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        // Deja de observar el elemento una vez que ha sido animado
-                        observer.unobserve(entry.target); 
-                    }
-                });
-            }, observerOptions);
-
-            fadeElements.forEach(el => {
-                observer.observe(el);
-            });
-
-            // ==== 3. Formulario de Contacto Dinámico (Validación) ====
-            const contactForm = document.getElementById('contact-form');
-            const formStatus = document.getElementById('form-status');
-
-            if (contactForm) {
-                contactForm.addEventListener('submit', async (e) => { // <-- Se convierte en async
-                    e.preventDefault(); // Previene el envío HTML normal
-
-                    // --- Validación (igual que antes) ---
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const message = document.getElementById('message').value;
-                    const submitButton = contactForm.querySelector('button[type="submit"]');
-
-                    if (name === '' || email === '' || message === '') {
-                        formStatus.textContent = 'Por favor, completa todos los campos.';
-                        formStatus.className = 'error';
-                        return;
-                    }
-
-                    // --- Lógica de envío a Formspree ---
-                    const formData = new FormData(contactForm); // Recopila los datos del formulario
-                    submitButton.disabled = true; // Deshabilita el botón mientras se envía
-                    submitButton.textContent = 'Enviando...';
-                    formStatus.textContent = '';
-                    formStatus.className = '';
-
-                    try {
-                        // Usamos fetch para enviar los datos a la URL del 'action' del formulario
-                        const response = await fetch(contactForm.action, {
-                            method: contactForm.method,
-                            body: formData,
-                            headers: {
-                                'Accept': 'application/json' // Formspree recomienda esto para respuestas JSON
-                            }
-                        });
-
-                        if (response.ok) {
-                            // Éxito
-                            formStatus.textContent = '¡Gracias! Tu mensaje ha sido enviado.';
-                            formStatus.className = 'success';
-                            contactForm.reset(); // Limpia el formulario
-                        } else {
-                            // Error del servidor de Formspree
-                            const data = await response.json();
-                            formStatus.textContent = `Error al enviar: ${data.error || 'Intenta de nuevo.'}`;
-                            formStatus.className = 'error';
-                        }
-                    } catch (error) {
-                        // Error de red (sin conexión, etc.)
-                        console.error('Error de red:', error);
-                        formStatus.textContent = 'Error de red. Revisa tu conexión.';
-                        formStatus.className = 'error';
-                    } finally {
-                        // Vuelve a habilitar el botón
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Enviar Mensaje';
-                    }
-                });
-            }
-
-        });
+        // Ejecutar una vez al cargar para elementos en el hero
+        window.onload = reveal;
     </script>
-    <!-- FIN DE JAVASCRIPT -->
 </body>
 </html>
